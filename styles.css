@@ -178,7 +178,7 @@ em {
     transform: translateY(-50%);                      /* Correct vertical centering */
     width: 40vw;                                      /* Responsive width relative to viewport */
     height: 40vw;                                     /* Maintain square aspect ratio */
-    background: url('images/Image.jpg') no-repeat center/contain; /* Hero image settings */
+    background: url('images/image.jpg') no-repeat center/contain; /* Hero image settings */
     z-index: 1;                                       /* Place behind text */
     opacity: 0.95;                                    /* Slight transparency */
 }
