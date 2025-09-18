@@ -1,0 +1,204 @@
+/* CV.CSS — Stylesheet for Raheel Shan CVs & Letter*/
+
+/*1. RESET STYLES*/
+* {
+    margin: 0; /* Remove default spacing around elements */
+    padding: 0; /* Remove default padding */
+    box-sizing: border-box; /* Include padding/border in element width/height */
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif; /* Clean, readable font */
+    line-height: 1.5; /* Space between lines for readability */
+    background-color: #f5f5f5; /* Light gray background */
+    color: #333; /* Dark gray text for readability */
+    padding: 20px; /* Space around the page */
+}
+
+/*2. CV CONTAINER*/
+.cv-container {
+    max-width: 900px; /* Restrict width for readability */
+    background-color: #fff; /* White CV background */
+    margin: 0 auto; /* Center container horizontally */
+    padding: 20px; /* Space inside container */
+    border-radius: 10px; /* Rounded corners for style */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Light shadow for depth */
+}
+
+/*3. HEADER (PICTURE + INFO)*/
+.cv-header {
+    display: flex; /* Flexbox: picture + info side by side */
+    align-items: center; /* Vertically align items */
+    gap: 20px; /* Space between picture and info */
+    margin-bottom: 30px; /* Space below header */
+}
+
+/* Profile picture */
+.profile-pic img {
+    width: 120px; /* Set picture size */
+    height: 120px; /* Square */
+    border-radius: 50%; /* Circular shape */
+    object-fit: cover; /* Cover without stretching */
+    border: 2px solid #333; /* Optional border */
+}
+
+/* Header information (name, contact) */
+.header-info h1 {
+    font-size: 1.8em; /* Large name */
+    color: #222;
+    margin-bottom: 5px;
+}
+
+.header-info p {
+    font-size: 0.95em; /* Slightly smaller for contact */
+    color: #555;
+}
+
+.header-info a {
+    color: #007BFF; /* Blue for links */
+    text-decoration: none; /* Remove underline */
+}
+
+.header-info a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/*4. MAIN CONTENT (GRID)*/
+.cv-main {
+    display: grid; /* Use CSS Grid for two columns */
+    grid-template-columns: 1fr 2fr; /* Left column narrow, right column wide */
+    gap: 40px; /* Space between columns */
+}
+
+/*5. LEFT COLUMN (Skills/Languages)*/
+.cv-left {
+    background-color: #f9f9f9; /* Slightly lighter background */
+    padding: 20px; /* Inner spacing */
+    border-radius: 8px; /* Rounded corners */
+}
+
+/* Headings in left column */
+.cv-left h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #222;
+    border-bottom: 2px solid #007BFF; /* Blue underline */
+    padding-bottom: 5px;
+}
+
+/* Lists in left column */
+.cv-left ul {
+    list-style-type: disc; /* Bulleted lists */
+    margin-left: 20px; /* Indent bullets */
+    margin-bottom: 20px; /* Space after list */
+}
+
+.cv-left li {
+    margin-bottom: 5px; /* Space between list items */
+}
+
+/*6. RIGHT COLUMN (Experience/Education)*/
+.cv-right h2 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    color: #222;
+    border-bottom: 2px solid #007BFF; /* Blue underline */
+    padding-bottom: 5px;
+}
+
+.cv-right p {
+    margin-bottom: 15px; /* Space between paragraphs */
+}
+
+/* Job section */
+.job {
+    margin-bottom: 20px; /* Space between jobs */
+}
+
+.job h3 {
+    font-size: 1.1em;
+    color: #333;
+}
+
+.job .date {
+    font-size: 0.9em;
+    color: #777; /* Lighter text for dates */
+    margin-bottom: 5px;
+}
+
+/* Education list */
+.education {
+    list-style-type: none; /* Remove bullets */
+}
+
+.education li {
+    margin-bottom: 10px;
+}
+
+/*7. DOWNLOAD BUTTON (Optional)*/
+.download-btn-container {
+    text-align: right; /* Align to right */
+    margin-bottom: 30px;
+}
+
+.download-btn-container button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    font-size: 0.95em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.download-btn-container button:hover {
+    background-color: #0056b3;
+}
+
+/*8. RESPONSIVE DESIGN*/
+@media screen and (max-width: 768px) {
+    .cv-main {
+        grid-template-columns: 1fr; /* Single column for small screens */
+        gap: 20px;
+    }
+
+    .cv-header {
+        flex-direction: column; /* Stack picture and info */
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .download-btn-container {
+        text-align: center; /* Center button on mobile */
+    }
+}
+
+/*9. PRINT LAYOUT*/
+@media print {
+    body {
+        background: none; /* White background for print */
+        padding: 0;
+        font-size: 11px; /* Compact font size */
+        color: #000; /* Black text for print */
+    }
+
+    .cv-container {
+        max-width: 100%;
+        box-shadow: none; /* Remove shadows for print */
+        padding: 10px;
+    }
+
+    .cv-main {
+        grid-template-columns: 1fr 2fr; /* Maintain column ratio */
+        gap: 10px; /* Reduce spacing for print */
+    }
+
+    h1, h2, h3, p, li {
+        page-break-inside: avoid; /* Avoid breaking elements */
+    }
+
+    .download-btn-container {
+        display: none; /* Completely hide download button when printing */
+    }
+}

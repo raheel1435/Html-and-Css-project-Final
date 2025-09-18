@@ -1,0 +1,620 @@
+/* RESET / BASE STYLING*/
+* {
+    margin: 0;                 /* Remove default spacing around elements */
+    padding: 0;                /* Remove default spacing inside elements */
+    box-sizing: border-box;    /* Include padding and border in element width/height */
+}
+
+/* General Reset & Base Styling*/
+body {
+    margin: 0;                        /* Remove all default margin from body */
+    padding: 0;                       /* Remove all default padding from body */
+    font-family: 'Arial', sans-serif; /* Set base font for the whole site */
+    background-color: #000;           /* Set black background for the page */
+    color: #fff;                      /* Set default text color to white */
+    line-height: 1.6;                 /* Set line spacing for better readability */
+}
+
+/* Navigation Bar*/
+nav {
+    position: fixed;                  /* Fix navbar on top of viewport */
+    top: 0;                           /* Stick to top edge */
+    width: 100%;                      /* Navbar spans full width */
+    background: rgba(0, 0, 0, 0.8);  /* Semi-transparent black background */
+    padding: 10px 20px;                  /* Vertical spacing inside navbar */
+    z-index: 1000;                    /* Keep navbar above all other elements */
+}
+
+nav ul {
+    list-style: none;                 /* Remove default bullet points */
+    display: flex;                    /* Arrange nav items in a row */
+    justify-content: center;          /* Center items horizontally */
+    margin: 0;                        /* Remove default margin */
+    padding: 0;                       /* Remove default padding */
+}
+
+nav ul li {
+    margin: 0 20px;                   /* Add horizontal spacing between items */
+}
+
+nav ul li a {
+    color: #fff;                      /* Set link text color to white */
+    text-decoration: none;            /* Remove underline from links */
+    font-weight: bold;                /* Make link text bold */
+}
+
+nav ul li a:hover {
+    color: #00bfff;                   /* Change link color on hover */
+}
+
+.nav-links {
+    list-style: none;           /* Remove default bullets */
+    display: flex;              /* Align items horizontally */
+    gap: 20px;                  /* Space between nav items */
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Button styling */
+.dropbtn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.nav-links li a, .dropbtn {
+    color: white;               /* White text for links */
+    text-decoration: none;      /* Remove underline */
+    padding: 8px 12px;          /* Adds clickable area around text */
+    display: block;             /* Makes full block clickable */
+    transition: background 0.3s; /* Smooth hover effect */
+}
+
+/* Hover effect for normal nav links */
+.nav-links li a:hover,
+.dropbtn:hover {
+    background-color: #3b5cd2;  /* Darker blue on hover */
+    border-radius: 5px;         /* Rounded corners for hover */
+}
+
+/* DROPDOWN MENU*/
+
+/* The dropdown container should be relative so its menu can be positioned absolutely */
+.dropdown {
+    position: relative;         /* Important for positioning dropdown menu */
+}
+
+/* Dropdown menu hidden by default */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #222;
+    min-width: 150px;
+    z-index: 1000;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    border-radius: 5px;
+}
+
+/* Individual links inside the dropdown */
+.dropdown-content a {
+    color: #333;                /* Dark text for readability */
+    padding: 10px 15px;         /* Adds space around text for easier clicking */
+    text-decoration: none;      /* Remove underline */
+    display: block;             /* Full width clickable area */
+    transition: background 0.3s; /* Smooth hover effect */
+}
+
+/* Hover effect for dropdown links */
+.dropdown-content a:hover {
+    background-color: #f0f0f0;  /* Light gray background when hovered */
+    border-radius: 5px;         /* Rounded corners on hover */
+}
+
+/* SHOW DROPDOWN ON HOVER*/
+
+/* When hovering over the parent "CVs" button, show the dropdown */
+.dropdown:hover .dropdown-content {
+    display: block;             /* Makes hidden dropdown visible */
+}
+
+/* Hero Section*/
+.home {
+    position: relative;               /* Required for positioning ::after pseudo-element */
+    height: 100vh;                    /* Hero takes full viewport height */
+    display: flex;                    
+    align-items: center;              /* Center content vertically */
+    justify-content: flex-start;      /* Align content to the left */
+    background: black;                
+    padding-left: 8%;                 /* Push content away from left edge */
+    overflow: hidden;                 /* Hide anything outside hero bounds */
+    text-align: left;                 
+}
+
+.home .intro {
+    position: relative;               /* Keep hero text positioned correctly */
+    z-index: 2;                       /* Keep text above hero image */
+    max-width: 40%;                   /* Limit text width for readability */
+}
+
+.home .intro h1 {
+    font-size: 64px;                  /* Set large title size */
+    color: #fff;                      
+    margin: 0;                        
+    letter-spacing: 3px;              /* Add spacing between letters */
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #ccc; /* Add glow effect */
+}
+
+.home .intro p {
+    font-size: 22px;                  /* Set paragraph font size */
+    margin-top: 20px;                 /* Space above paragraph */
+    margin-bottom: 30px;              /* Space below paragraph */
+    color: #ddd;                      /* Light gray paragraph color */
+}
+em {
+    font-style: italic;               /* Remove italic style from <em> */
+    font-family: 'Times New Roman', Times, serif;  /* Highlight <em> text in blue */
+    font-weight: bold;                /* Make <em> text bold */
+}
+#home .tagline {
+    font-size: 1.5rem;                /* Set tagline font size */
+    margin-top: 10px;                 /* Space above tagline */
+    color: #f4f4f4;                   /* Set tagline color */
+    font-weight: 300;                 /* Light font weight */
+    letter-spacing: 7px;              /* Space out letters for style */
+}
+
+.home::after {
+    content: "";                                       /* Required to generate pseudo-element */
+    position: absolute;                                /* Absolute positioning relative to .home */
+    top: 50%;                                         /* Center vertically */
+    right: 8%;                                        /* Space from right edge */
+    transform: translateY(-50%);                      /* Correct vertical centering */
+    width: 40vw;                                      /* Responsive width relative to viewport */
+    height: 40vw;                                     /* Maintain square aspect ratio */
+    background: url('images/Image.jpg') no-repeat center/contain; /* Hero image settings */
+    z-index: 1;                                       /* Place behind text */
+    opacity: 0.95;                                    /* Slight transparency */
+}
+
+/* Container holding the buttons */
+.home-buttons {
+  display: flex;           /* Arrange buttons in a row */
+  gap: 10px;               /* Space between buttons */
+  flex-wrap: wrap;         /* Allow wrapping if screen is too narrow */
+  justify-content: center; /* Center buttons horizontally */
+}
+
+/* Button styles */
+.home-buttons a {
+  padding: 12px 24px;      /* Size of the buttons */
+  font-size: 16px;         /* Text size */
+  text-align: center;
+  text-decoration: none;
+  border-radius: 6px;
+  background-color: #4a90e2;
+  color: white;
+  transition: transform 0.2s;
+}
+
+.home-buttons a:hover {
+  transform: scale(1.05);
+}
+
+/* Wave Buttons (Hero Section) - UPDATED FOR MOBILE */
+.buttons {
+    display: flex;                                   /* Arrange buttons in a row */
+    gap: 10px;                                       /* Space between buttons */
+    flex-wrap: nowrap;                               /* Prevent wrapping to new line */
+    justify-content: flex-start;                     /* Align buttons to the left */
+    margin-top: 20px;                                /* Space above buttons */
+    width: 100%;                                     /* Full width container */
+    overflow-x: auto;                                /* Allow horizontal scrolling if needed */
+    padding-bottom: 5px;                             /* Space for scrollbar if needed */
+    -webkit-overflow-scrolling: touch;               /* Smooth scrolling on iOS devices */
+}
+
+.wave-btn {
+    position: relative;                              /* Required for wave pseudo-element */
+    display: inline-block;                           
+    padding: 10px 20px;                              /* Button padding */
+    color: #fff;                                    
+    font-weight: bold;                               /* Bold button text */
+    text-decoration: none;                           
+    overflow: hidden;                                
+    border: 2px solid #00bfff;                       /* Blue border */
+    border-radius: 50px;                             /* Rounded pill shape */
+    transition: 0.3s;                                /* Smooth hover transition */
+    flex-shrink: 0;                                  /* Prevent buttons from shrinking */
+    white-space: nowrap;                             /* Prevent text from wrapping */
+}
+
+.wave-btn span {
+    position: relative;                              
+    z-index: 2;                                      /* Keep text above wave */
+}
+
+.wave-btn::before {
+    content: '';                                     
+    position: absolute;                              
+    width: 300%;                                     /* Large enough to cover button */
+    height: 300%;                                    
+    top: 50%;                                        
+    left: 50%;                                       
+    background: rgba(0, 191, 255, 0.3);             /* Semi-transparent blue wave */
+    transform: translate(-50%, -50%) scale(0);       /* Hidden initially */
+    border-radius: 50%;                              
+    transition: transform 0.5s ease;                
+}
+
+.wave-btn:hover::before {
+    transform: translate(-50%, -50%) scale(1);       /* Expand wave on hover */
+}
+
+/* About Section*/
+.about {
+    padding: 80px 20px;                              /* Space around About section */
+}
+
+.about-container {
+    display: flex;                                   /* Align image and text side by side */
+    align-items: center;                             /* Vertically center content */
+    justify-content: center;                         /* Center content horizontally */
+    max-width: 1000px;                               /* Limit container width */
+    margin: auto;                                    /* Center container */
+}
+
+.profile-image {
+    width: 350px;                                    /* Set image width */
+    margin-right: 40px;                              /* Space between image and text */
+    display: block;                                  /* Ensure block display */
+    object-fit: cover;                               /* Cover container without distortion */
+}
+.it-image {
+    width: 400px;                                    /* Set image width */
+    margin-right: 40px;                              /* Space between image and text */
+    display: block;                                  /* Ensure block display */
+    object-fit: cover;                               /* Cover container without distortion */
+}
+
+.about-text {
+    max-width: 600px;                                /* Limit text width for readability */
+}
+
+.about-text h2 {
+    font-size: 32px;                                 /* Section heading font size */
+    margin-bottom: 15px;                             /* Space below heading */
+}
+
+/* Profile image mask/fade */
+.profile-mask {
+    position: relative;                              /* Required for overlay */
+    display: inline-block;                           /* Inline block for masking */
+}
+
+.profile-mask .profile-image {
+    -webkit-mask-image: 
+        linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 15%),
+        linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 15%),
+        linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 15%),
+        linear-gradient(to left, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 15%);
+    /*To fix the error and ensure compatibility, add the standard 'mask-image' property alongside '-webkit-mask-image' in the .profile-mask .profile-image selector.*/
+    mask-image:   
+        linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 15%),
+        linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 15%),
+        linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 15%),
+        linear-gradient(to left, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 15%);
+    -webkit-mask-composite: destination-in;          /* Combine masks for fade effect */
+    mask-composite: intersect;                       /* Intersect for fade */
+    -webkit-mask-repeat: no-repeat;                  /* Prevent repeat */
+    mask-repeat: no-repeat;                           
+    -webkit-mask-size: cover;                         
+    mask-size: cover;                                 
+}
+
+.profile-mask::after {
+    content: "";                                     /* Overlay pseudo-element */
+    position: absolute;                               
+    top: 0; left: 0; right: 0; bottom: 0;            
+    pointer-events: none;                            /* Allow clicks to pass through */
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 75%, rgba(0,0,0,1) 100%); /* Fallback fade */
+}
+
+/* Cards Section*/
+.cards-section {
+    padding: 80px 20px;              /* Space around the Cards section */
+    text-align: center;              /* Center the section heading and content */
+}
+
+.cards-section h2 {
+    font-size: 36px;                 /* Font size for Cards section heading */
+    margin-bottom: 30px;             /* Space below heading */
+}
+
+.card-container {
+    display: flex;                  /* Arrange cards in a row */
+    gap: 25px;                      /* Space between cards */
+    overflow-x: auto;               /* Enable horizontal scroll */
+    overflow-y: hidden;             /* Hide vertical scrollbar */
+    flex-wrap: nowrap;              /* Keep cards in a single row */
+    justify-content: flex-start;    /* Align cards from the left inside the box */
+    padding: 20px;                  /* Space inside container */
+    scroll-behavior: smooth;        /* Smooth scrolling */
+    
+    /* This is the "box" that limits how many cards are visible */
+    max-width: 1100px;              /* Enough to show about 4 cards */
+    margin: 0 auto;                 /* Center the whole box on the page */
+    box-sizing: border-box;         /* Include padding in width calculation */
+}
+
+/* Custom horizontal scrollbar */
+.card-container::-webkit-scrollbar {
+    height: 8px;                      /* Set scrollbar height */
+}
+
+.card-container::-webkit-scrollbar-thumb {
+    background: #00bfff;              /* Color of the scrollbar handle */
+    border-radius: 4px;               /* Rounded scrollbar handle */
+}
+
+.card-container::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.1); /* Light track behind scrollbar */
+}
+
+.card-wrapper {
+    display: flex;                     /* Arrange card and label vertically */
+    flex-direction: column;            
+    align-items: center;               /* Center card and text */
+}
+
+.card-wrapper a {
+    text-decoration: none;             /* Remove underline from link */
+    color: inherit;                    /* Inherit text color */
+    display: block;                    /* Make the entire card clickable */
+}
+
+/* Each card size stays consistent */
+.card {
+    min-width: 250px;               /* Minimum width of card */
+    height: 180px;                  /* Fixed card height */
+    background-size: cover;         /* Cover with background image */
+    background-position: center;    /* Center the background */
+    border-radius: 15px;            /* Rounded corners */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); 
+    transition: transform 0.3s, z-index 0.3s; 
+    cursor: pointer;
+}
+
+/* Hover zoom effect */
+.card:hover {
+    transform: scale(1.2);             /* Slight zoom on hover */
+    z-index: 10;                       /* Bring hovered card above others */
+}
+
+.card-name {
+    margin-top: 10px;                  /* Space between card and label */
+    font-weight: bold;                 /* Bold text for card label */
+    font-size: 18px;                   /* Font size for label */
+}
+
+/* Footer Section*/
+footer {
+    padding: 30px;                     /* Footer padding */
+    text-align: center;                /* Center all footer content */
+    background: rgba(0, 0, 0, 0.9);    /* Dark semi-transparent background */
+}
+
+footer .socials {
+    margin-bottom: 15px;               /* Space below social icons */
+}
+
+/* Fix for social media icons - remove blue lines/dots */
+footer .socials a {
+    display: inline-block; /* Ensure proper spacing control */
+    line-height: 0;       /* Remove any extra line height */
+}
+
+footer .socials a svg {
+    margin: 0 10px;                    /* Space between each icon */
+    transition: transform 0.3s, fill 0.3s; /* Smooth hover effects */
+    display: block;               /* Ensure block display for SVG */
+    border: none;                /* Remove any default border */
+    outline: none;             /* Remove focus outline */
+}
+
+footer .socials a svg:hover {
+    transform: scale(1.2);             /* Grow icon on hover */
+    fill: #00bfff;                     /* Change icon color on hover */
+}
+
+/* Remove any default SVG strokes or fills that might cause blue lines */
+footer .socials a svg path,
+footer .socials a svg circle,
+footer .socials a svg rect {
+    stroke: none;         /* Remove any stroke lines */
+    vector-effect: non-scaling-stroke; /* Prevent scaling issues */
+}
+
+/* Ensure no focus outlines are causing the blue lines */
+footer .socials a:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Alternative approach - if the issue persists, try resetting all SVG properties */
+footer .socials a svg * {
+    stroke: none !important;
+    border: none !important;
+    outline: none !important;
+}
+
+footer p {
+    color: #777;                       /* Light gray text for footer */
+    font-size: 14px;                   /* Small font size for footer text */
+}
+
+/* Responsive Design*/
+
+/* Tablet / iPad (≤ 1024px) */
+@media (max-width: 1024px) {
+    .home .intro { 
+        max-width: 60%;                /* Allow more width for text */
+    }
+    .home::after { 
+        width: 35vw;                   /* Shrink hero image width */
+        height: 35vw;                  /* Shrink hero image height */
+        right: 5%;                     /* Adjust spacing from right */
+    }
+    .about-container { 
+        max-width: 90%;                /* Container fits smaller screens */
+    }
+    .card-container {
+        max-width: 800px;              /* Show about 3 cards at a time */
+    }
+}
+
+/* Mobile (≤ 768px) */
+@media (max-width: 768px) {
+    /* Wave buttons mobile optimization */
+    .buttons {
+        justify-content: center;   /* Align buttons to start */
+        width: 100%;             /* Full width container */
+        margin-left: 0;        /* Remove left margin */
+        margin-right: 0;       /* Remove right margin */
+        padding: 0 5px;        /* Add horizontal padding */
+    }
+    
+    .wave-btn {
+        flex-shrink: 0;                /* Prevent buttons from shrinking */
+        white-space: nowrap;           /* Prevent text from wrapping */
+        padding: 5px 10px;             /* Slightly smaller padding for mobile */
+        font-size: 14px;               /* Slightly smaller font for mobile */
+    }
+    
+    .home { 
+        flex-direction: row;           /* Stack text and hero image vertically */
+        justify-content: center;       /* Center vertically */
+        padding-left: 0;               /* Remove left padding */
+    }
+    .home .intro { 
+        max-width: 90%;                /* Expand text width for small screens */
+        z-index: 2;                    /* Keep text above hero image */
+        text-align: center;            /* Center text on mobile */
+    }
+    .home::after { 
+        display: none;                 /* Completely hide Image.jpg on small screens */
+    }
+    
+   
+         /* Center card container and cards */
+    .card-container {
+        justify-content: center; /* Center cards horizontally */
+        padding: 10px; /* Reduce padding */
+        max-width: 90%;                /* Use almost full width of screen */
+    }
+    .about-container { 
+        flex-direction: column;        /* Stack image and text */
+        text-align:center;             /* Center text */
+        padding: 0 15px; /* Add padding to prevent touching edges */
+    }
+      .profile-image, .it-image {
+        width: 100%; /* Make image responsive to container */
+        max-width: 280px; /* Set maximum width */
+        margin: 0 auto 20px; /* Center image and add bottom margin only */
+        display: block; /* Ensure block display for centering */
+        padding-top: 60px;        /* Add top padding for spacing */
+    }
+    .card { 
+        min-width: 90%  ;              /* Smaller card width */
+        margin: 0 auto;               /* Center cards */
+        height: 150px;                 /* Smaller card height */
+    }
+    .card-wrapper {
+        align-items: center; /* Center card content */
+    }
+    /* Restructure navigation */
+    nav {
+        padding: 5px 10px;                 /* Reduce padding for smaller screens */
+    }
+    nav ul {
+        display: flex;                 /* Use grid instead of flex */
+        flex-direction: row;           /* Keep items in a row */
+        flex-wrap: wrap;               /* Allow items to wrap */
+        row-gap: 5px;                      /* Space between buttons */
+        margin-top: 5px;              /* Add small spacing from top */
+        justify-content: center;       /* Center navigation items */
+        
+    }
+
+    nav ul li {
+        margin: 0 8px;                     /* Remove extra margin for tighter layout */
+    }
+
+    nav ul li a, .dropbtn {
+        padding: 5px 8px;             /* Smaller padding for compactness */
+        font-size: 0.8rem;             /* Slightly smaller text */
+        border-radius: 6px;            /* Rounded but compact */
+    }
+}
+
+/* Very small devices (≤ 480px) */
+@media (max-width: 480px) {
+    nav {
+        padding: 4px 8px;                  /* Further reduce padding */
+    }
+    nav ul{
+        gap: 3px;                       /* Tighter spacing between items */
+        margin-top: 3px;
+    }
+    nav ul li {
+        margin: 0 5px;                   /* Further reduce margin */
+    }
+     .nav-links li a, .dropbtn {
+        padding: 4px 6px; /* Further reduce padding in nav items */
+        font-size: 0.75rem; /* Smaller font for very small screens */
+    }
+    .profile-image, .it-image {
+        padding-top: 60px;          /* Add top padding for spacing */
+        max-width: 220px; /* Smaller max width for very small screens */
+    }
+    .home .intro h1 { 
+        font-size: clamp(2rem, 8vw, 3rem); /* Scale hero title for tiny screens */
+    }
+    .home .intro p { 
+        font-size: clamp(1rem, 4vw, 1.2rem); /* Scale paragraph */
+    }
+    .home::after { 
+        display: none;                 /* Completely hide Image.jpg on small screens */
+    }
+    .wave-btn {                          
+        padding: 6px 12px;             /* Smaller button padding */
+        font-size: 12px;               /* Smaller font size */
+    }
+    .cards-section h2 { 
+        font-size: 28px;               /* Scale section heading */
+    }
+    .card-name { 
+        font-size: 16px;               /* Scale card label */
+    }
+    .card-container {
+        max-width: 100%;               /* On very small screens, fill width */
+    }
+    .card {
+        min-width: 160px;              /* Smaller card size */
+        height: 120px;
+    }
+    .about-container { 
+        padding: 0 10px;               /* Add padding to prevent touching edges */
+    }
+    
+    /* Adjust buttons for very small screens */
+    .buttons {
+        gap: 5px;                      /* Reduce gap between buttons */
+    }
+}
