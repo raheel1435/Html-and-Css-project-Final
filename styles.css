@@ -514,6 +514,10 @@ footer p {
    
          /* Center card container and cards */
     .card-container {
+<<<<<<< HEAD
+=======
+        /*justify-content: center; /* Center cards horizontally */
+>>>>>>> 01e03102b52e992836c5c2207c9e7385401bc831
         padding: 10px; /* Reduce padding */
         max-width: 90%;                /* Use almost full width of screen */
     }
